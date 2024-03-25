@@ -5,8 +5,8 @@ on: [push, pull_request]
 jobs:
   build:
 # specify the build machine
-  runs-on: ubuntu-latest 
-  steps:
+    runs-on: ubuntu-latest 
+    steps:
 # Checkout to the repository on the build machine
   - name: Checkout
     uses: actions/checkout@v3
