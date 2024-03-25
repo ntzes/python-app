@@ -64,6 +64,6 @@ jobs:
   - name: Create issue on failure
     if: ${{ failure() }}
     run: 
-      gh issue create --title "Failure on workflow: ${{ github.workflow}} - ${{ github.sha }}" --body "Failure on Job: ${{ github.job }}"
+      gh issue create --title "Failure on workflow:${{github.workflow}} - ${{github.sha}}" --body "Failure on Job:${{ github.job}}"
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
