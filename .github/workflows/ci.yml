@@ -4,7 +4,8 @@ on: [push, pull_request]
 
 jobs:
   build:
-  runs-on: ubuntu-latest # specify the build machine
+# specify the build machine
+  runs-on: ubuntu-latest 
   steps:
 # Checkout to the repository on the build machine
   - name: Checkout
