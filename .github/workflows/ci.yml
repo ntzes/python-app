@@ -28,7 +28,7 @@ jobs:
 
     - name: Generate the report
       if: ${{ always() }}
-      run: coverage report > coverage-report
+      run: coverage report > /coverage-report.log
 
     - name: Scan image
       uses: anchore/scan-action@v3
