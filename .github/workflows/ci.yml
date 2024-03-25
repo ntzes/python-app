@@ -5,7 +5,6 @@ on: [push, pull_request]
 jobs:
   build:
     name: Build, Test and Deploy
-# specify the build machine
     runs-on: ubuntu-latest 
     steps:
 # Checkout to the repository on the build machine
