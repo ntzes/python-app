@@ -20,7 +20,7 @@ jobs:
 
     - name: Docker Build and run
       run:
-        docker build . -t ntzes/python-app
+        docker build . --file Dockerfile --tag python-app:$(date +%s)
         docker run --name python-app -p 80:80 -d -i -t ntzes/python-app
 
     - name: Test Code
