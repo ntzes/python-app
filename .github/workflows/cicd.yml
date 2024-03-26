@@ -23,11 +23,11 @@ jobs:
         docker build . --file Dockerfile --tag python-app
 
     - name: Test Code
-      run: coverage run -m pytest tests/
+      run: coverage run -m pytest -v -s
 
     - name: Generate the report
       if: ${{ always() }}
-      run: coverage report > ./coverage-report.log
+      run: coverage report -m
 
     - name: Scan image
       uses: anchore/scan-action@v3
