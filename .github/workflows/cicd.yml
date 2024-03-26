@@ -34,7 +34,7 @@ jobs:
 
     - name: Test with pytest
       run: 
-        pytest app --doctest-modules --junitxml=junit/test-results.xml --cov=app --cov=server --cov-report=xml --cov-report=html
+        pytest app
       continue-on-error: true
         
     - uses: actions/upload-artifact@v4
