@@ -35,13 +35,13 @@ jobs:
     - name: Test with pytest
       run: 
         pytest app --doctest-modules --junitxml=junit/test-results.xml --cov=app --cov=server --cov-report=xml --cov-report=html
-      continue-on-error: true
-
-    - name: Generate the report
-      uses: orgoro/coverage@v3.1
+        
+    - name: Produce the coverage report
+      uses: insightsengineering/coverage-action@v2
       with:
-        coverageFile: test-results.xml
-        token: ${{ secrets.GITHUB_TOKEN }}
+        path: ./
+        diff-storage: _xml_coverage_reports
+        coverage-summary-title: "Code Coverage Summary"
       continue-on-error: true
 
     - name: Scan image
@@ -50,18 +50,11 @@ jobs:
       with:
         image: "python-app"
       continue-on-error: true
-
-    - name: upload Anchore scan SARIF report
-      uses: github/codeql-action/upload-sarif@v2
-      with:
-        sarif_file: ${{ steps.scan.outputs.sarif }}
-      continue-on-error: true
         
     - uses: actions/upload-artifact@v4
       with:
-        name: coverage-report
-        path: coverage-report
-      continue-on-error: true
+        name: test-results.xml
+        path: ./
       
     - name: Login to Docker Hub
       uses: docker/login-action@v2
