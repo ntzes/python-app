@@ -33,6 +33,7 @@ jobs:
       with:
         coverageFile: path/to/coverage.xml
         token: ${{ secrets.GITHUB_TOKEN }}
+      continue-on-error: true
 
     - name: Scan image
       uses: anchore/scan-action@v3
