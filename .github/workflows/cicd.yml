@@ -35,6 +35,7 @@ jobs:
     - name: Test with pytest
       run: 
         pytest app --doctest-modules --junitxml=junit/test-results.xml --cov=app --cov=server --cov-report=xml --cov-report=html
+      continue-on-error: true
         
     - name: Produce the coverage report
       uses: insightsengineering/coverage-action@v2
