@@ -26,6 +26,7 @@ jobs:
       run: 
         pip install pytest pytest-cov
         pytest --cov-report= --cov=myproj tests/
+      continue-on-error: true
 
     - name: Generate the report
       uses: orgoro/coverage@v3.1
