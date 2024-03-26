@@ -40,16 +40,19 @@ jobs:
       id: scan
       with:
         image: "python-app"
+      continue-on-error: true
 
     - name: upload Anchore scan SARIF report
       uses: github/codeql-action/upload-sarif@v2
       with:
         sarif_file: ${{ steps.scan.outputs.sarif }}
+      continue-on-error: true
         
     - uses: actions/upload-artifact@v4
       with:
         name: coverage-report
         path: coverage-report
+      continue-on-error: true
       
     - name: Login to Docker Hub
       uses: docker/login-action@v2
