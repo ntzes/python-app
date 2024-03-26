@@ -20,7 +20,7 @@ ADD app python-app
 #RUN git clone
 
 # Get pip to download and install requirements:
-RUN pip install -r requirements.txt
+RUN pip install -r /python-app/requirements.txt
 
 # Expose ports
 EXPOSE 80
