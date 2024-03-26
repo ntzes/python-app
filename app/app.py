@@ -8,10 +8,8 @@ app = Flask(__name__)
 def salute_user():
     # Prompt the user for their name
     name = input("What's your name? ")
-
     # Salute the user
     print(f"Hello, {name}! Welcome!")
-
 # Call the function to salute the user
 salute_user()
 
