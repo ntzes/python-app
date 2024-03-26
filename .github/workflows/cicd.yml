@@ -40,7 +40,7 @@ jobs:
     - name: Generate the report
       uses: orgoro/coverage@v3.1
       with:
-        coverageFile: path/to/coverage.xml
+        coverageFile: test-results.xml
         token: ${{ secrets.GITHUB_TOKEN }}
       continue-on-error: true
 
