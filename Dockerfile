@@ -14,7 +14,7 @@ RUN apt-get install -y tar git curl nano wget dialog net-tools build-essential
 RUN apt-get install -y python3 python3-dev python3-pip
 
 # Copy the application folder inside the container
-ADD python-app /python-app
+ADD ../python-app /python-app
 
 # Deploy the application from git repository
 #RUN git clone
