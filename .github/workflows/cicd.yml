@@ -40,7 +40,7 @@ jobs:
     - name: Produce the coverage report
       uses: insightsengineering/coverage-action@v2
       with:
-        path: ./cobertura.xml
+        path: cobertura.xml
         diff-storage: _xml_coverage_reports
         coverage-summary-title: "Code Coverage Summary"
       continue-on-error: true
