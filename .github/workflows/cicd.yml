@@ -21,7 +21,6 @@ jobs:
     - name: Docker Build and run
       run:
         docker build . --file Dockerfile --tag python-app
-        docker run -dit -p 80:80 python-app
 
     - name: Test Code
       run: coverage run -m pytest test/
@@ -34,7 +33,7 @@ jobs:
       uses: anchore/scan-action@v3
       id: scan
       with:
-        image: "ntzes/python-app"
+        image: "python-app"
 
     - name: upload Anchore scan SARIF report
       uses: github/codeql-action/upload-sarif@v2
