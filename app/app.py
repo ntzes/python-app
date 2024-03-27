@@ -1,17 +1,19 @@
-from flask import Flask
+from flask import Flask, render_template, request
 app = Flask(__name__)
 
-@app.route("/")
+#@app.route("/")
 #def hello():
     #return "Hello World!"
 
-def salute_user():
-    # Prompt the user for their name
-    name = input("What's your name? ")
-    # Salute the user
-    print(f"Hello, {name}! Welcome!")
-# Call the function to salute the user
-salute_user()
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-if __name__ == "__main__":
-    app.run()
+@app.route('/salute', methods=['POST'])
+def salute():
+    name = request.form['name']
+    return render_template('salute.html', name=name)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
