@@ -2,6 +2,9 @@
 
 The Salute App is a small application written in pyhton which runs on flask, the code and functionality is tested through the pytest and the user can interact with it through an http server with the help of cherrypy. 
 
+![Salute-App](https://github.com/ntzes/python-app/assets/50707431/17db8fb5-3216-4f72-8f2b-9d562ae66b0d)
+
+
 ## Deploying the app
 
 The app is deployed through Docker on a Cloud Server at Digitalocean and is accessible through the following IP.
@@ -12,6 +15,7 @@ By executing the appropriate commands we download the updated image from Dockerh
 
 <code>docker pull ntzes/python-app:latest</code>
 <code>docker run --name python-app -p 80:80 -d -i -t ntzes/python-app</code>
+
 
 ## Code Changes and Testing
 
