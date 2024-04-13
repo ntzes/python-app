@@ -13,7 +13,7 @@ http://165.227.133.221
 
 By executing the appropriate commands we download the updated image from Dockerhub and deploy it on our Server.
 
-<code>docker pull ntzes/python-app:latest</code>
+<code>docker pull ntzes/python-app:latest</code><br>
 <code>docker run --name python-app -p 80:80 -d -i -t ntzes/python-app</code>
 
 
